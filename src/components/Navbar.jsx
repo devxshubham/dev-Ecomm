@@ -1,20 +1,20 @@
 export const Navbar = ()=>{
 
-    return <div className="flex p-5 items-center justify-between flex-grow border-b-[2px] gap-1">
-        <div className="flex justify-betwee gap-5 flex-grow">
+    return <div className="flex p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
+        <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
             <div className="text-2xl font-bold">
                 Exclusive
             </div>
-            <div className="flex items-center gap-5 ">
+            <div className="flex items-center flex-grow gap-5 ">
                 <button className="text-[16px] font-medium">Home</button>
                 <button className="text-[16px] font-medium">contact</button>
                 <button className="text-[16px] font-medium">About</button>
                 <button className="text-[16px] font-medium">Sign Up</button>
             </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 md:gap-4">
             <div className="flex items-center gap-1 bg-[#F5F5F5] py-[7px] rounded px-[15px]">
-                <input className="bg-[#F5F5F5]" placeholder="What are you looink for ?" type="text" />
+                <input className="bg-[#F5F5F5] hidden md:block" placeholder="What are you looink for ?" type="text" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
