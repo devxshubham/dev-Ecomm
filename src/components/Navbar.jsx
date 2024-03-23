@@ -1,6 +1,6 @@
 export const Navbar = ()=>{
 
-    return <div className="flex p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
+    return <div className="flex bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
         <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
             <div className="text-2xl font-bold">
                 Exclusive
