@@ -1,12 +1,19 @@
-export const Navbar = ()=>{
+import { useNavigate } from "react-router-dom"
 
-    return <div className="flex bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
+
+
+export const Navbar = ()=>{
+    const navigate = useNavigate();
+
+    return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
         <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
             <div className="text-2xl font-bold">
                 Exclusive
             </div>
-            <div className="flex items-center flex-grow gap-5 ">
-                <button className="text-[16px] font-medium">Home</button>
+            <div className="flex items-center flex-end gap-5 ">
+                <button className="text-[16px] font-medium" onClick={()=>{
+                    navigate('/home')
+                }}>Home</button>
                 <button className="text-[16px] font-medium">contact</button>
                 <button className="text-[16px] font-medium">About</button>
                 <button className="text-[16px] font-medium">Sign Up</button>

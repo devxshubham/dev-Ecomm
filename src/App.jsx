@@ -1,6 +1,7 @@
 import { Navbar } from './components/Navbar'
 import { HomePage } from './pages/HomePage'
 import { ProductPage } from './pages/ProductPage'
+import { CategoryProducts } from './pages/CategoryProducts'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     {
       path : '/home',
       element : <HomePage/>
+    },
+    {
+      path : '/category/:name',
+      element : <CategoryProducts/>
     }
   ])
 
@@ -22,8 +27,9 @@ function App() {
   return (
     <>
       <RecoilRoot>
-          <Navbar></Navbar>
-          <RouterProvider router = {router}></RouterProvider>
+          <RouterProvider router = {router}>
+            <Navbar></Navbar>
+          </RouterProvider>
       </RecoilRoot>
       
     </>

@@ -3,11 +3,10 @@ import { useState } from "react"
 
 export const ProductDetail = ({prod}) => {
 
+    
+
     const [count, setCount] = useState(1);
 
-    function printing(){
-        console.log("printing")
-    }
 
     return <div className="flex flex-col gap-5 min-w-[400px]">
         <div className="flex flex-col gap-3 ">

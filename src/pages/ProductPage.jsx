@@ -1,10 +1,9 @@
 import { ProductDetail } from "../components/ProductDetail"
 import { ProdImage } from "../components/prodImage"
 
-import { productId } from "../store/atoms/productId"
+import { Navbar } from "../components/Navbar"
 
 import { useEffect, useState } from "react"
-import { useRecoilState } from "recoil"
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 
@@ -25,8 +24,11 @@ export const ProductPage = () => {
         })
     },[param.id])
 
-    if(prod) return <div className="flex justify-between gap-10 mx-[30px] my-[50px]">
+    if(prod) return <div>
+        <Navbar></Navbar>
+        <div className="flex justify-between gap-10 mx-auto max-w-[1400px] my-[50px]">
         <ProdImage prod={prod}></ProdImage>
         <ProductDetail prod={prod}></ProductDetail>
+        </div>
     </div>
 }
