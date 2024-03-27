@@ -1,17 +1,20 @@
 import '../App.css'
 import { Navbar } from '../components/Navbar'
+import { Footer } from '../components/Footer'
+import { Image } from '../components/Image'
 
 import { BrowseCategory } from '../components/BrowseCategory'
+import { NewArrival } from '../components/NewArrival'
 
 export const HomePage = () => {
 
 
     return <div>
             <Navbar></Navbar>
-            <div className='flex flex-col gap-[100px] max-w-[1300px] mx-auto'>
+            <div className='flex flex-col gap-[100px] my-[50px] max-w-[1300px] mx-auto'>
                 <div className="myRadient">
                     <div className='absolute hover:rotate-12 hover:scale-105 transition-transform duration-500 ease-in-out delay-0 top-[1px] right-[7%] max-h-[500px] max-w-[500px]'>
-                        <img className='object-cover ' src="https://ik.imagekit.io/vewzaaue0/DevStore/headphone.webp?updatedAt=1711307562148" alt="" />
+                        <Image  src="https://ik.imagekit.io/vewzaaue0/DevStore/headphone.webp?updatedAt=1711307562148" alt="" />
                     </div>
                     <div className=' flex flex-col gap-5 py-10 px-8'>
                         <div className='text-[#00FF66] text-[20px]'>Categories</div>
@@ -40,7 +43,10 @@ export const HomePage = () => {
                 </div>
 
             <BrowseCategory></BrowseCategory>
+            <NewArrival></NewArrival>
             
-        </div>
+
+            </div>
+            <Footer></Footer>
     </div>
 }

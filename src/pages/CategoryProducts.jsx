@@ -25,7 +25,7 @@ export const CategoryProducts = () => {
         <Navbar></Navbar>
         <main className="mt-[50px] grid grid-cols-3 gap-10 max-w-[1000px] mx-auto">
             {products.map( prod => {
-                return <div className="flex cursor-pointer mb-[10px] flex-col  flex-grow w-[300px] max-h-[320px]" key={prod.id}
+                return <div className="flex cursor-pointer hover:scale-110 hover:rounded-lg transition-transform ease-in-out duration-200 delay-0 mb-[10px] flex-col w-[300px] max-h-[320px]" key={prod.id}
                     onClick={()=>{
                         navigate(`/product/${prod.id}`)
                     }}>

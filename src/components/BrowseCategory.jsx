@@ -47,7 +47,7 @@ export const BrowseCategory = () => {
     return <div className="flex flex-col gap-5">
         <div>
             <div>
-                <div className="w-[20px] h-[40px] bg-[#DB4444]"></div>
+                <div className="w-[20px] h-[40px] rounded bg-[#DB4444]"></div>
                 <div className=" text-[#DB4444] font-semibold">Categories</div>
             </div>
             <div className="text-[36px] font-semibold">
@@ -57,7 +57,7 @@ export const BrowseCategory = () => {
 
         <div className="flex gap-5 ">
             {categoryArray.map( cat => {
-                return <div className="flex flex-col cursor-pointer items-center hover:bg-[#DB4444] hover:text-white justify-center w-[170px] h-[140px] border-[3px] rounded" key={cat.name}
+                return <div className="flex flex-col cursor-pointer items-center hover:scale-110 transition-transform ease-in-out duration-200 delay-0  justify-center w-[170px] h-[140px] border-[3px] rounded hover:bg-[#DB4444] hover:text-white hover:border-0 hover:rounded-md" key={cat.name}
                     onClick={()=>{
                         navigate(`/category/${cat.name}`)
                     }}>

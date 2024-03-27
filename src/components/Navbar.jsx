@@ -1,22 +1,20 @@
 import { useNavigate } from "react-router-dom"
 
-
-
 export const Navbar = ()=>{
     const navigate = useNavigate();
 
     return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
         <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
-            <div className="text-2xl font-bold">
-                Exclusive
+            <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-400 to-red-600">
+                DevStore
             </div>
-            <div className="flex items-center flex-end gap-5 ">
-                <button className="text-[16px] font-medium" onClick={()=>{
+            <div className="flex items-center flex-end gap-7 ">
+                <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                     navigate('/home')
                 }}>Home</button>
-                <button className="text-[16px] font-medium">contact</button>
-                <button className="text-[16px] font-medium">About</button>
-                <button className="text-[16px] font-medium">Sign Up</button>
+                <button className=" buttonUnderline text-[20px] font-medium">contact</button>
+                <button className="buttonUnderline text-[20px] font-medium">About</button>
+                <button className="buttonUnderline text-[20px] font-medium whitespace-nowrap">Sign Up</button>
             </div>
         </div>
         <div className="flex items-center gap-1 md:gap-4">
