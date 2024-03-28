@@ -2,7 +2,10 @@ import { Navbar } from './components/Navbar'
 import { HomePage } from './pages/HomePage'
 import { ProductPage } from './pages/ProductPage'
 import { CategoryProducts } from './pages/CategoryProducts'
+import { Login } from './pages/Login'
+import { Signup } from './pages/Signup'
 
+import { RecoilRoot } from 'recoil'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -17,10 +20,17 @@ const router = createBrowserRouter([
     {
       path : '/category/:name',
       element : <CategoryProducts/>
+    },
+    {
+      path : '/login',
+      element : <Login/>
+    },
+    {
+      path : '/signup',
+      element : <Signup/>
     }
   ])
 
-import { RecoilRoot } from 'recoil'
 
 function App() {
 
