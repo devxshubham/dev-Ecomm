@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useSetRecoilState } from "recoil";
+import { kartAtom } from "../store/atoms/kartAtom";
 
 
 export const ProductDetail = ({prod}) => {
 
-    
+    const setKart = useSetRecoilState(kartAtom)
 
     const [count, setCount] = useState(1);
 
@@ -17,7 +19,7 @@ export const ProductDetail = ({prod}) => {
 
             <div className="h-[1px] w-full bg-black opacity-30 mt-[20px]"></div>
         </div>
-        <div>
+        <div className="flex flex-col gap-5">
             <div className=" flex items-center justify-between">
                 <div className="flex border rounded">
                     <div className="flex justify-center items-center  w-[44px] h-[45px]" onClick={ ()=>{
@@ -33,15 +35,19 @@ export const ProductDetail = ({prod}) => {
                         </svg>
                     </div>
                 </div>
-                <div className="text-white  px-8 py-3 rounded bg-[#DB4444]">
-                    Buy Now
+                <div className="bg-white cursor-pointer px-8 py-3 rounded border border-[#DB4444] font-semibold text-[#DB4444]" onClick={() => {
+                    setKart( prev => prev + 1)
+                }}>
+                    Add to cart
                 </div>
+        
                 <div className="border rounded p-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                     </svg>
                 </div>
             </div>
+            <button className="text-white  px-8 py-3 w-full rounded bg-[#DB4444]">Buy Now</button>
             
         </div>
         <div>
