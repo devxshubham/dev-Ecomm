@@ -4,6 +4,7 @@ import { ProductPage } from './pages/ProductPage'
 import { CategoryProducts } from './pages/CategoryProducts'
 import { Login } from './pages/Login'
 import { Signup } from './pages/Signup'
+import { ViewKart } from './pages/ViewKart'
 
 import { RecoilRoot } from 'recoil'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
       path : '/signup',
       element : <Signup/>
+    },
+    {
+      path : '/product/kart',
+      element : <ViewKart/>
     }
   ])
 
