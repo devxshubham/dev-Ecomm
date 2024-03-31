@@ -11,6 +11,7 @@ import { GiBallerinaShoes } from "react-icons/gi";
 import { GiSunglasses } from "react-icons/gi";
 import { PiMotorcycleFill } from "react-icons/pi";
 
+
 const categoryArray = [
     {
         name : "smartphones",
@@ -77,16 +78,29 @@ export const BrowseCategory = () => {
             </div>
         </div>
 
-        <div className="flex gap-5">
-            {categoryArray.map( cat => {
-                return <div className="flex flex-col cursor-pointer items-center hover:scale-110 transition-transform ease-in-out duration-200 delay-0  justify-center min-w-[170px] h-[140px] border-[3px] rounded hover:bg-[#DB4444] hover:text-white hover:border-0 hover:rounded-md" key={cat.name}
-                    onClick={()=>{
-                        navigate(`/category/${cat.name}`)
-                    }}>
-                    <div className="flex items-center justify-center h-[56px] w-[56px]">{cat.icon}</div>
-                    <div className="whitespace-nowrap">{cat.name}</div>
-                </div>
-            })}
+        <div className="categories">
+            <div className=" marquee  ">
+                {categoryArray.map( cat => {
+                    return <div className="flex flex-col cursor-pointer items-center hover:scale-110 transition-transform ease-in-out duration-200 delay-0  justify-center min-w-[170px] h-[140px] border-[3px] rounded hover:bg-[#DB4444] hover:text-white hover:border-0 hover:rounded-md" key={cat.name}
+                        onClick={()=>{
+                            navigate(`/category/${cat.name}`)
+                        }}>
+                        <div className="flex items-center justify-center h-[56px] w-[56px]">{cat.icon}</div>
+                        <div className="whitespace-nowrap">{cat.name}</div>
+                    </div>
+                })}
+            </div>
+            <div className=" marquee ">
+                {categoryArray.map( cat => {
+                    return <div className="flex flex-col cursor-pointer items-center hover:scale-110 transition-transform ease-in-out duration-200 delay-0  justify-center min-w-[170px] h-[140px] border-[3px] rounded hover:bg-[#DB4444] hover:text-white hover:border-0 hover:rounded-md" key={cat.name}
+                        onClick={()=>{
+                            navigate(`/category/${cat.name}`)
+                        }}>
+                        <div className="flex items-center justify-center h-[56px] w-[56px]">{cat.icon}</div>
+                        <div className="whitespace-nowrap">{cat.name}</div>
+                    </div>
+                })}
+            </div>
         </div>
     </div>
 }

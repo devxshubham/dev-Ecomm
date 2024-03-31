@@ -16,7 +16,7 @@
     left : 0px;
     bottom: 0px;
     width: 0%;
-    height: 2px;
+    height: 2.5px;
     background-color: black;
     transition-property: all;
     transition-timing-function: ease-in-out;
@@ -26,3 +26,47 @@
 .buttonUnderline:hover::after{
     width : 100%;
 }
+
+@keyframes slide {
+    from {
+        transform : translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+.categories{
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.categories::before{
+    content : "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width : 100px;
+    background: linear-gradient(to right , rgb(255, 255, 255), transparent);
+    z-index: 1;
+}
+.categories::after{
+    content : "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width : 100px;
+    background: linear-gradient(to left , rgb(255, 255, 255), transparent);
+    z-index: 1;
+}
+.marquee{
+    display: flex;
+    gap: 12px;
+    margin : 8px;
+    animation: 15s slide infinite linear;
+}
+.categories:hover .marquee{
+    animation-play-state: paused;
+}
+
