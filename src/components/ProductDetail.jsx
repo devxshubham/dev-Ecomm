@@ -3,9 +3,11 @@ import { useSetRecoilState } from "recoil";
 import { kartAtom } from "../store/atoms/kartAtom";
 
 
+
 export const ProductDetail = ({prod}) => {
 
     const setKart = useSetRecoilState(kartAtom)
+ 
 
     const [count, setCount] = useState(1);
 
@@ -36,7 +38,8 @@ export const ProductDetail = ({prod}) => {
                     </div>
                 </div>
                 <div className="bg-white cursor-pointer px-8 py-3 rounded border border-[#DB4444] font-semibold text-[#DB4444]" onClick={() => {
-                    setKart( prev => prev + 1)
+                    setKart( prev => prev + count)
+                    
                 }}>
                     Add to cart
                 </div>

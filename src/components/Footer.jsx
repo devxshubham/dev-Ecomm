@@ -1,4 +1,8 @@
-
+import { FcGoogle } from "react-icons/fc";
+import { AiFillApple } from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
 
@@ -43,7 +47,27 @@ export const Footer = () => {
                 <div>Contact</div>
             </div>
             
-            <div></div>
+            <div className="flex flex-col gap-5">
+                <div>Download App</div>
+                <div className="flex flex-col gap-3">
+                    <div className="text-[#FAFAFA]">Save $3 with App New User Only</div>
+                    <div className="flex max-w-[180px] gap-3 p-1 border border-white rounded-md items-center">
+                        <FcGoogle size={30}/>
+                        <div>
+                            <div className="text-[12px]">GET IT ON</div>
+                            <div className="text-[20px] font-semibold">Google Play</div>
+                        </div>
+                    </div>
+                    <div className="flex max-w-[180px] gap-3 p-1 border border-white rounded-md items-center">
+                        <AiFillApple size={30}/>
+                        <div>
+                            <div className="text-[12px]">DOWNLOAD ON THE</div>
+                            <div className="text-[20px] font-semibold">App Store</div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
         </div>
     </div>
 }

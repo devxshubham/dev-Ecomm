@@ -29,9 +29,11 @@ export const ViewKart = () => {
                 </tbody>
             </table>
            <div className="flex justify-between gap-10">
-                <div className="flex gap-5 ">
-                    <input className="px-3 py-3 border border-2px border-black rounded" type="text" placeholder="Coupon code"/>
-                    <button className="px-5 py-3 text-white rounded bg-[#DB4444]">Apply Coupon</button>
+                <div>
+                    <div className="flex gap-5 ">
+                        <input className="px-3 py-3 border border-2px border-black rounded" type="text" placeholder="Coupon code"/>
+                        <button className="px-5 py-3 text-white rounded bg-[#DB4444]">Apply Coupon</button>
+                    </div>
                 </div>
                 <div className="flex flex-col gap-4 w-[40%] px-4 py-4 border rounded border-black">
                     <div className="text-[20px] font-medium">Cart Total</div>
