@@ -6,7 +6,7 @@ export const NewArrival = () =>{
 
     return <div>
         <div>
-            <div>
+            <div className="flex gap-5 items-center">
                 <div className="w-[20px] h-[40px] rounded bg-[#DB4444]"></div>
                 <div className=" text-[#DB4444] font-semibold">Featured</div>
             </div>

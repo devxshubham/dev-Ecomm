@@ -26,7 +26,7 @@ const categoryArray = [
         icon :   <BsSmartwatch  size={35}/>
     },
     {
-        name : "TbPerfume",
+        name : "fragrances",
         icon :   <TbPerfume size={35}/>
     },
     {
@@ -69,7 +69,7 @@ export const BrowseCategory = () => {
     
     return <div className="flex flex-col gap-5">
         <div>
-            <div>
+            <div className="flex gap-5 items-center">
                 <div className="w-[20px] h-[40px] rounded bg-[#DB4444]"></div>
                 <div className=" text-[#DB4444] font-semibold">Categories</div>
             </div>
