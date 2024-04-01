@@ -1,5 +1,6 @@
 import { ProductDetail } from "../components/ProductDetail"
 import { ProdImage } from "../components/prodImage"
+import { RelatedProduct } from "../components/RelatedProducts";
 
 import { Navbar } from "../components/Navbar"
 
@@ -24,11 +25,15 @@ export const ProductPage = () => {
         })
     },[param.id])
 
-    if(prod) return <div>
+    if(prod) return <div className="">
         <Navbar></Navbar>
-        <div className="flex justify-between gap-10 mx-auto max-w-[1400px] my-[50px]">
-        <ProdImage prod={prod}></ProdImage>
-        <ProductDetail prod={prod}></ProductDetail>
-        </div>
+        <main className="flex flex-col gap-10 mx-auto max-w-[1400px] my-[50px]">
+            <div className="flex justify-between gap-10 mx-auto max-w-[1400px] my-[50px]">
+                <ProdImage prod={prod}></ProdImage>
+                <ProductDetail prod={prod}></ProductDetail>
+                
+            </div>
+            <RelatedProduct category={prod.category}></RelatedProduct>
+        </main>
     </div>
 }
