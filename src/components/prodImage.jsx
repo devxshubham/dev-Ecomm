@@ -12,10 +12,10 @@ export const ProdImage = ( {prod} ) => {
     },[prod])
 
     return <div className="flex gap-5 m-5 p-5">
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-around">
             {prod.images.map( img => {
                 i++;
-            return <div key={i} className="bg-[#F5F5F5] hover:cursor-pointer max-w-[170px] max-h-[138px]" onClick={()=>{
+            return <div key={i} className="bg-[#F5F5F5] rounded-md p-2 hover:bg-[#e0e0e0] hover:rotate-6 transition-transform ease-linear duration-100 delay-0 cursor-pointer w-[170px] h-[138px]" onClick={()=>{
                 setMainImg(img)
             }}>
                 <Image src = {img}></Image>

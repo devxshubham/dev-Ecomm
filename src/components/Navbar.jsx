@@ -22,12 +22,12 @@ export const Navbar = ()=>{
                 DevStore
             </div>
             <div className="flex items-center flex-end gap-7 ">
-                <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
+                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium" onClick={()=>{
                     navigate('/home')
                 }}>Home</button>
-                <button className=" buttonUnderline text-[20px] font-medium">contact</button>
-                <button className="buttonUnderline text-[20px] font-medium">About</button>
-                <button className="buttonUnderline text-[20px] font-medium whitespace-nowrap" onClick={()=>{
+                <button className=" buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">contact</button>
+                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">About</button>
+                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium whitespace-nowrap" onClick={()=>{
                     navigate('/signup')
                 }}>Sign Up</button>
             </div>

@@ -18,7 +18,7 @@ export const SingleProduct = ({prod}) => {
             <div className="font-medium">{prod.brand} {prod.title}</div>
             <div className="flex gap-2">
                 <div className="text-[#DB4444]">&#8377; {prod.price*100}</div>
-                <div className="line-through text-gray-500">{ Math.floor((prod.price*100) * 100 / (100-prod.discountPercentage))}</div>
+                <div className="line-through text-gray-500">{ ((prod.price*100) * 100 / (100-prod.discountPercentage)).toFixed(0)}</div>
             </div>
         </div>
     </div>

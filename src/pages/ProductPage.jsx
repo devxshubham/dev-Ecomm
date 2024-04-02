@@ -3,6 +3,7 @@ import { ProdImage } from "../components/prodImage"
 import { RelatedProduct } from "../components/RelatedProducts";
 
 import { Navbar } from "../components/Navbar"
+import { Footer } from "../components/Footer"
 
 import { useEffect, useState } from "react"
 import axios from 'axios'
@@ -11,8 +12,7 @@ import { useParams } from "react-router-dom"
 export const ProductPage = () => {
 
     const param = useParams();
-    
-    // const [id,setId] = useRecoilState(productId)
+
     const [prod, setProd] = useState("")
 
     useEffect( ()=> {
@@ -25,15 +25,17 @@ export const ProductPage = () => {
         })
     },[param.id])
 
-    if(prod) return <div className="">
+    if(prod) return <>
         <Navbar></Navbar>
-        <main className="flex flex-col gap-10 mx-auto max-w-[1400px] my-[50px]">
+        <section className="flex flex-col gap-10 mx-auto max-w-[1400px] my-12">
             <div className="flex justify-between gap-10 mx-auto max-w-[1400px] my-[50px]">
                 <ProdImage prod={prod}></ProdImage>
                 <ProductDetail prod={prod}></ProductDetail>
                 
             </div>
             <RelatedProduct category={prod.category}></RelatedProduct>
-        </main>
-    </div>
+        </section>
+
+        <Footer></Footer>
+    </>
 }
