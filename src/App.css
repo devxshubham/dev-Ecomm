@@ -46,7 +46,7 @@
     top: 0px;
     left: 0px;
     height: 100%;
-    width : 100px;
+    width : 150px;
     background: linear-gradient(to right , rgb(255, 255, 255), transparent);
     z-index: 1;
 }
@@ -56,7 +56,7 @@
     top: 0px;
     right: 0px;
     height: 100%;
-    width : 100px;
+    width : 150px;
     background: linear-gradient(to left , rgb(255, 255, 255), transparent);
     z-index: 1;
 }
@@ -64,7 +64,7 @@
     display: flex;
     gap: 12px;
     margin : 8px;
-    animation: 15s slide infinite linear;
+    animation: 18s slide infinite linear;
 }
 .categories:hover .marquee{
     animation-play-state: paused;
