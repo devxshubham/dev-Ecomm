@@ -1,16 +1,30 @@
 import { useState } from "react"
-import { useSetRecoilState } from "recoil";
+import {useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { kartAtom } from "../store/atoms/kartAtom";
+import { kartIdAtom } from "../store/atoms/KartIdAtom";
+import { kartItemFamily } from "../store/atoms/kartItemFamily";
 
 
 
 export const ProductDetail = ({prod}) => {
-
-    const setKart = useSetRecoilState(kartAtom)
- 
-
     const [count, setCount] = useState(1);
+    const setKart = useSetRecoilState(kartAtom)
+    const [kartId, setKartId] = useRecoilState(kartIdAtom)
+    const [ kartItem, setKartAtomFamily] = useRecoilState(kartItemFamily(prod.id))
 
+    console.log(kartItem)
+
+    function HandleKartId(){
+        if( !kartId.includes(prod.id)){
+            setKartId([...kartId,prod.id])
+        }
+        setKartAtomFamily({
+            title : `${prod.brand} ${prod.title}`,
+            img : prod.thumbnail,
+            quantity : kartItem.quantity + count,
+            price : prod.price*100
+        })
+    }
 
     return <div className="flex flex-col gap-5 min-w-[400px]">
         <div className="flex flex-col gap-3 ">
@@ -39,6 +53,8 @@ export const ProductDetail = ({prod}) => {
                 </div>
                 <div className="bg-white cursor-pointer px-8 py-3 rounded border border-[#DB4444] font-semibold text-[#DB4444]" onClick={() => {
                     setKart( prev => prev + count)
+                    HandleKartId(prod.id);
+
                     
                 }}>
                     Add to cart

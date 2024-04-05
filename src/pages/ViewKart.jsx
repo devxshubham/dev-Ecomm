@@ -1,8 +1,12 @@
-import { Image } from "../components/Image"
+import { useRecoilValue } from "recoil"
 import { Navbar } from "../components/Navbar"
+import { kartIdAtom } from "../store/atoms/KartIdAtom"
+import { KartItem } from "../components/KartItem"
+import { totalPriceAtom } from "../store/atoms/totalPriceAtom"
 
 export const ViewKart = () => {
-
+    const kartId = useRecoilValue(kartIdAtom)
+    const totalPrice = useRecoilValue(totalPriceAtom)
 
     return <>
         <Navbar></Navbar>
@@ -17,15 +21,10 @@ export const ViewKart = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="shadow-md">
-                        <td className="flex gap-5 px-3 py-[10px] items-center">
-                            <div className="size-[70px]"><Image src="https://cdn.dummyjson.com/product-images/7/1.jpg"></Image></div>
-                            <div>Apple Name</div>
-                        </td>
-                        <td>50000</td>
-                        <td>01</td>
-                        <td>50000</td>
-                    </tr>
+                    {kartId.map( id => {
+                        console.log(id)
+                        return <KartItem id={id}/>
+                    })}
                 </tbody>
             </table>
            <div className="flex justify-between gap-10">
@@ -40,7 +39,7 @@ export const ViewKart = () => {
                     <div className="">
                         <div className="flex py-2 border-b-2 justify-between">
                             <div>SubTotal</div>
-                            <div>1750</div>
+                            <div>{totalPrice}</div>
                         </div>
                         <div className="flex py-2 border-b-2 justify-between">
                             <div>Shipping</div>
@@ -48,7 +47,7 @@ export const ViewKart = () => {
                         </div>
                         <div className="flex py-2  justify-between">
                             <div>Total</div>
-                            <div>1750</div>
+                            <div>{totalPrice}</div>
                         </div>
                     </div>
                     <button className="px-4 text-white rounded py-2 bg-[#DB4444]">Proceed To Checkout</button>
