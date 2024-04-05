@@ -17,8 +17,6 @@ export const RelatedProduct = ({category}) => {
         })
     },[])
 
-    console.log(prods)
-
     return <div className='flex flex-col gap-5'>
         <div>
             <div className="flex gap-5 items-center">
@@ -29,7 +27,7 @@ export const RelatedProduct = ({category}) => {
         </div>
         <div className='flex gap-5'>
             {prods.map( prod => {
-                return <SingleProduct prod={prod}/>
+                return <SingleProduct prod={prod} key={prod.id}/>
             })}
         </div>
     </div>
