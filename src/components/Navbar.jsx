@@ -11,7 +11,6 @@ export const Navbar = ()=>{
     const navigate = useNavigate();
 
     const kart = useRecoilValue(kartAtom)
-    console.log(kart)
     
 
     return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
