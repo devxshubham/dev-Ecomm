@@ -9,7 +9,7 @@ import { NewArrival } from '../components/NewArrival'
 export const HomePage = () => {
 
 
-    return <div>
+    return <>
             <Navbar></Navbar>
             <div className='flex flex-col gap-[100px] my-[50px] max-w-[1300px] mx-auto'>
                 <div className="myRadient">
@@ -48,5 +48,5 @@ export const HomePage = () => {
 
             </div>
             <Footer></Footer>
-    </div>
+    </>
 }

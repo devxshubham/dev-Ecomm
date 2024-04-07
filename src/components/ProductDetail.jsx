@@ -3,6 +3,7 @@ import {useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { kartAtom } from "../store/atoms/kartAtom";
 import { kartIdAtom } from "../store/atoms/KartIdAtom";
 import { kartItemFamily } from "../store/atoms/kartItemFamily";
+import { totalPriceAtom } from "../store/atoms/totalPriceAtom";
 
 
 
@@ -11,8 +12,7 @@ export const ProductDetail = ({prod}) => {
     const setKart = useSetRecoilState(kartAtom)
     const [kartId, setKartId] = useRecoilState(kartIdAtom)
     const [ kartItem, setKartAtomFamily] = useRecoilState(kartItemFamily(prod.id))
-
-    console.log(kartItem)
+    const setTotalPrice = useSetRecoilState(totalPriceAtom)
 
     function HandleKartId(){
         if( !kartId.includes(prod.id)){
@@ -54,8 +54,7 @@ export const ProductDetail = ({prod}) => {
                 <div className="bg-white cursor-pointer px-8 py-3 rounded border border-[#DB4444] font-semibold text-[#DB4444]" onClick={() => {
                     setKart( prev => prev + count)
                     HandleKartId(prod.id);
-
-                    
+                    setTotalPrice(0)
                 }}>
                     Add to cart
                 </div>
