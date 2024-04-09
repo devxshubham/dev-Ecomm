@@ -22,7 +22,7 @@ export const Navbar = ()=>{
             </div>
             <div className="flex items-center flex-end gap-7 ">
                 <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium" onClick={()=>{
-                    navigate('/home')
+                    navigate('/')
                 }}>Home</button>
                 <button className=" buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">contact</button>
                 <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">About</button>
