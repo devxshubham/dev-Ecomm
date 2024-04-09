@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       element : <ProductPage/>
     },
     {
-      path : '/home',
+      path : '/',
       element : <HomePage/>
     },
     {
@@ -43,7 +43,7 @@ function App() {
     <>
       <RecoilRoot>
           <RouterProvider router = {router}>
-            <Navbar></Navbar>
+            
           </RouterProvider>
       </RecoilRoot>
       
