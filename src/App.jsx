@@ -8,6 +8,7 @@ import { ViewKart } from './pages/ViewKart'
 
 import { RecoilRoot } from 'recoil'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Success } from './pages/success'
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     {
       path : '/product/kart',
       element : <ViewKart/>
+    },
+    {
+      path : '/success',
+      element : <Success/>
     }
   ])
 

@@ -3,11 +3,17 @@ import { Navbar } from "../components/Navbar"
 import { kartIdAtom } from "../store/atoms/KartIdAtom"
 import { KartItem } from "../components/KartItem"
 import { totalPriceAtom } from "../store/atoms/totalPriceAtom"
-import { useEffect } from "react"
+import { kartAtom } from "../store/atoms/kartAtom"
+
+import { useNavigate } from "react-router-dom"
 
 export const ViewKart = () => {
-    const kartId = useRecoilValue(kartIdAtom)
-    const [totalPrice, setTotalPrice] = useRecoilState(totalPriceAtom)
+    const navigate = useNavigate();
+
+    const setKartCount = useSetRecoilState(kartAtom)
+
+    const [kartId,setKartId] = useRecoilState(kartIdAtom)
+    const totalPrice = useRecoilValue(totalPriceAtom)
 
 
     return <>
@@ -51,7 +57,11 @@ export const ViewKart = () => {
                             <div>{totalPrice}</div>
                         </div>
                     </div>
-                    <button className="px-4 text-white rounded py-2 bg-[#DB4444]">Place Order</button>
+                    <button className="px-4 text-white rounded py-2 bg-[#DB4444]" onClick={()=>{
+                        navigate('/success')
+                        setKartId([])
+                        setKartCount(0)
+                    }}>Place Order</button>
                 </div>
            </div>
         </div>
