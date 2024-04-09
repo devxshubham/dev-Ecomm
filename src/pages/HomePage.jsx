@@ -11,7 +11,7 @@ export const HomePage = () => {
 
     return <>
             <Navbar></Navbar>
-            <div className='flex flex-col gap-[100px] my-[50px] max-w-[1300px] mx-auto'>
+            <div className='flex flex-col gap-[100px] my-[50px] max-w-[1000px] mx-auto'>
                 <div className="myRadient">
                     <div className='absolute hover:rotate-12 hover:scale-105 transition-transform duration-500 ease-in-out delay-0 top-[1px] right-[7%] max-h-[500px] max-w-[500px]'>
                         <Image  src="https://ik.imagekit.io/vewzaaue0/DevStore/headphone.webp?updatedAt=1711307562148" alt="" />

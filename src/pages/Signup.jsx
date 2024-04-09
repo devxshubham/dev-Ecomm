@@ -8,7 +8,7 @@ export const Signup = () => {
 
     return <>
         <Navbar></Navbar>
-        <div className="flex gap-[100px] my-12 mx-auto justify-center items-center">
+        <div className="flex gap-[100px] my-12 mx-auto max-w-[1000px] justify-center items-center">
             <div className="h-[600px]">
                 <Image src="https://ik.imagekit.io/vewzaaue0/DevStore/login.png?updatedAt=1711620613140"></Image>
             </div>
