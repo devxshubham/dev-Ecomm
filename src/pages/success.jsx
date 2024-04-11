@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 export const Success = () => {
     const navigate = useNavigate();
 
-    return <div className='flex justify-center items-center text-white bg-gradient-to-b from-red-700  to-orange-500 h-screen w-screen'>
+    return <div className='flex fixed justify-center items-center text-white bg-gradient-to-b from-red-700  to-orange-500 h-screen w-screen'>
         <Confetti
         width={3000}
         height={1000}
@@ -14,7 +14,7 @@ export const Success = () => {
         <div className='flex flex-col items-center gap-3'>
             <div className='text-[40px] font-bold'>Order Placed</div>
             <div className='text-[25px] font-semibold'>Thankyou for ordering from DevStore</div>
-            <button className='px-3 py-1 bg-white border-black text-black border-[2px] text-[20px] rounded'
+            <button className='px-3 py-1 bg-white border-black text-black  text-[20px] rounded-[10px] hover:scale-110 ease-linear delay-0 duration-100 transition-transform'
                 onClick={()=>{
                     navigate('/')
                 }}
