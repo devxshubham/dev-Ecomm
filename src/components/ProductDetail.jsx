@@ -1,13 +1,16 @@
 import { useState } from "react"
 import {useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
+import {useNavigate} from "react-router-dom"
+
 import { kartAtom } from "../store/atoms/kartAtom";
 import { kartIdAtom } from "../store/atoms/KartIdAtom";
 import { kartItemFamily } from "../store/atoms/kartItemFamily";
 import { totalPriceAtom } from "../store/atoms/totalPriceAtom";
 
 
-
 export const ProductDetail = ({prod}) => {
+    const navigate = useNavigate()
+
     const [count, setCount] = useState(1);
     const setKart = useSetRecoilState(kartAtom)
     const [kartId, setKartId] = useRecoilState(kartIdAtom)
@@ -30,7 +33,11 @@ export const ProductDetail = ({prod}) => {
         <div className="flex flex-col gap-3 ">
             <div className="font-bold text-[24px]">{prod.brand} {prod.title}</div>
             <div>Rating : {prod.rating}</div>
-            <div className="text-[23px] font-semibold">&#8377; {prod.price*100}</div>
+            <div className="flex gap-3 items-center leading-6 text-[20px]">
+                <div className="text-[23px] font-semibold">&#8377; {prod.price*100}</div>
+                <div className="line-through text-gray-500">{((prod.price*100) * 100 / (100-prod.discountPercentage)).toFixed(0)}</div>
+                <div className="text-[#DB4444]">{prod.discountPercentage}% off</div>
+            </div>
             <div>{prod.description}</div>
 
             <div className="h-[1px] w-full bg-black opacity-30 mt-[20px]"></div>
@@ -65,7 +72,9 @@ export const ProductDetail = ({prod}) => {
                     </svg>
                 </div>
             </div>
-            <button className="text-white  px-8 py-3 w-full rounded bg-[#DB4444]">Buy Now</button>
+            <button className="text-white  px-8 py-3 w-full rounded bg-[#DB4444]" onClick={()=>{
+                navigate('/product/kart')
+            }}>Buy Now</button>
             
         </div>
         <div>

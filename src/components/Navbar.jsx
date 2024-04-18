@@ -16,17 +16,19 @@ export const Navbar = ()=>{
     return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
         <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
             <div className="text-2xl font-bold text-transparent cursor-pointer bg-clip-text bg-gradient-to-r from-red-600 via-red-400 to-red-600" onClick={()=>{
-                navigate('/home')
+                navigate('/')
             }}>
                 DevStore
             </div>
             <div className="flex items-center flex-end gap-7 ">
-                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium" onClick={()=>{
+                <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                     navigate('/')
                 }}>Home</button>
-                <button className=" buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">contact</button>
-                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium">About</button>
-                <button className="buttonUnderline px-2 py-1 hover:bg-[#e6e6e6] text-[20px] font-medium whitespace-nowrap" onClick={()=>{
+                <button className=" buttonUnderline text-[20px] font-medium">contact</button>
+                <button className="buttonUnderline text-[20px] whitespace-nowrap font-medium" onClick={()=>{
+                    navigate('/login')
+                }}>Sign In</button>
+                <button className="buttonUnderline text-[20px] font-medium whitespace-nowrap" onClick={()=>{
                     navigate('/signup')
                 }}>Sign Up</button>
             </div>

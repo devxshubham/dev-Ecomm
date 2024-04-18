@@ -3,9 +3,11 @@ import { InputBox } from "../components/Inputbox"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 
+import { useNavigate } from "react-router-dom"
+
 export const Signup = () => {
     
-
+    const navigate = useNavigate()
     return <>
         <Navbar></Navbar>
         <div className="flex gap-[100px] my-12 mx-auto max-w-[1000px] justify-center items-center">
@@ -23,7 +25,9 @@ export const Signup = () => {
                     <InputBox type="password" placeholder="Password"/>
                 </div>
                 <div className="flex flex-col gap-5 items-center">
-                    <button className="bg-[#DB4444] text-white w-full py-3 rounded">Create Acount</button>
+                    <button className="bg-[#DB4444] text-white w-full py-3 rounded" onClick={()=>{
+                            navigate('/')
+                        }}>Create Acount</button>
                     <p>already have an account ? <a className="underline" href="/login">login</a></p>
                 </div>
             </div>
