@@ -25,10 +25,10 @@ export const RelatedProduct = ({category}) => {
             </div>
             
         </div>
-        <div className='flex gap-5'>
-            {prods.map( prod => {
-                return <SingleProduct prod={prod} key={prod.id}/>
-            })}
+        <div className='flex flex-wrap justify-center gap-5'>
+                {prods.map( prod => {
+                    return <SingleProduct prod={prod} key={prod.id}/>
+                })}
         </div>
     </div>
 }
