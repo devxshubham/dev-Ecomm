@@ -25,8 +25,8 @@ export const CategoryProducts = () => {
     return <div>
         <Navbar></Navbar>
         <main className="max-w-[1000px] mx-auto my-12 ">
-            <div className="flex my-4 text-[25px]">Showing Results for : <div className=" mx-2  font-bold">{category}</div></div>
-            <div className="mt-[50px] grid grid-cols-3 gap-10 ">
+            <div className="flex  my-4 text-[25px]">Showing Results for : <div className=" mx-2  font-bold">{category}</div></div>
+            <div className="mt-[50px] flex flex-wrap gap-10 items-center justify-center">
                 {products.map( prod => {
                     return <SingleProduct prod={prod}/>
                 })}

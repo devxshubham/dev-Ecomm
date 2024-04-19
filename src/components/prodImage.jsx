@@ -11,7 +11,7 @@ export const ProdImage = ( {prod} ) => {
         setMainImg(prod.images[0])
     },[prod])
 
-    return <div className="flex gap-5 m-5 p-5 max-w-[45%]">
+    return <div className="flex items-center gap-5 m-5 p-5 max-w-[]">
         <div className="flex flex-col gap-1 justify-around">
             {prod.images.map( img => {
                 i++;
@@ -22,7 +22,7 @@ export const ProdImage = ( {prod} ) => {
             </div>
         })}
         </div>
-        <div className=" w-[500px] h-full">
+        <div className="w-[500px] h-full">
             <Image src = {mainImg}></Image>
         </div>
     </div>

@@ -28,7 +28,7 @@ export const ProductPage = () => {
     if(prod) return <>
         <Navbar></Navbar>
         <section className="flex flex-col gap-10 mx-auto w-[90vw] max-w-[1050px] my-12">
-            <div className="flex justify-between gap-10  my-[50px]">
+            <div className="flex flex-col xl:flex-row justify-between gap-10  my-[50px]">
                 <ProdImage prod={prod}></ProdImage>
                 <ProductDetail prod={prod}></ProductDetail>
                 
