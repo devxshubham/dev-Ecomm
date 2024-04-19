@@ -1,16 +1,22 @@
 import { useNavigate } from "react-router-dom"
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { kartAtom } from "../store/atoms/kartAtom";
+
+import { menuAtom } from '../store/atoms/menuAtom'
 
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
+import { RxCrossCircled } from "react-icons/rx";
 
 export const Navbar = ()=>{
     const navigate = useNavigate();
 
     const kart = useRecoilValue(kartAtom)
+    const [menu, setMenu] = useRecoilState(menuAtom)
+    console.log(menu);
     
 
     return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
@@ -20,7 +26,7 @@ export const Navbar = ()=>{
             }}>
                 DevStore
             </div>
-            <div className="flex items-center flex-end gap-7 ">
+            <div className="hidden sm:flex items-center flex-end gap-7 ">
                 <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                     navigate('/')
                 }}>Home</button>
@@ -32,13 +38,31 @@ export const Navbar = ()=>{
                     navigate('/signup')
                 }}>Sign Up</button>
             </div>
+            <div className={`absolute flex items-center justify-center z-10 bg-slate-100 h-[100vh]  ${menu ? "translate-y-0" : "-translate-y-full"} top-0 bottom-0 left-0 right-0 `}>
+                <button className="absolute top-5 right-5" onClick={() => setMenu(false)}><RxCrossCircled size={30} /></button>
+                <div className="flex flex-col  gap-4 h-[50%]">
+                    <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
+                        navigate('/')
+                        setMenu(false)
+                    }}>Home</button>
+                    <button className=" buttonUnderline text-[20px] font-medium">contact</button>
+                    <button className="buttonUnderline text-[20px] whitespace-nowrap font-medium" onClick={()=>{
+                        navigate('/login')
+                        setMenu(false)
+                    }}>Sign In</button>
+                    <button className="buttonUnderline text-[20px] font-medium whitespace-nowrap" onClick={()=>{
+                        navigate('/signup')
+                        setMenu(false)
+                    }}>Sign Up</button>
+                </div>
+            </div>
         </div>
         <div className="flex items-center cursor-pointer gap-4 md:gap-4">
-            <div className="flex items-center gap-1 bg-[#F5F5F5] py-[7px] rounded px-[15px]">
+            <div className=" hidden  lg:flex items-center gap-1 bg-[#F5F5F5] py-[7px] rounded px-[15px]">
                 <input className="bg-[#F5F5F5] hidden md:block" placeholder="What are you looink for ?" type="text" />
                 <BsSearch size={20} />
             </div>
-            <div>
+            <div className="hidden lg:block">
                 <AiOutlineHeart size={30} />
             </div>
             <div className="relative cursor-pointer p-2" onClick={()=>{
@@ -51,6 +75,12 @@ export const Navbar = ()=>{
             <div className="cursor-pointer bg-[#DB4444] text-white p-2 rounded-full">
                 <AiOutlineUser size={25} />
             </div>
+            <div className="sm:hidden " onClick={()=>{
+                setMenu( prev => !prev);
+            }}>
+                <AiOutlineMenu size={30} />
+            </div>
+            <div></div>
         </div>
     </div>
 }
