@@ -4,7 +4,7 @@ import { Image } from "./Image"
 export const NewArrival = () =>{
     const navigate = useNavigate()
 
-    return <div>
+    return <div className="mx-2">
         <div>
             <div className="flex gap-5 items-center">
                 <div className="w-[20px] h-[40px] rounded bg-[#DB4444]"></div>
@@ -14,7 +14,7 @@ export const NewArrival = () =>{
                 New Arrival
             </div>
         </div>
-        <div className="flex gap-5 h-[600px] text-white">
+        <div className="flex flex-col md:flex-row gap-5 md:h-[600px] text-white">
             <div className="flex relative flex-grow h-full w-full bg-[#1a1a1a]">
                 <Image src="https://ik.imagekit.io/vewzaaue0/DevStore/men.jpg?updatedAt=1711399409069"></Image>
                 <div className="absolute  bottom-5 ml-5">

@@ -1,16 +1,13 @@
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
 
 
-    return <div className="relative bottom-0 left-0 right-0 h-[400px] text-white bg-black">
-        <div className="flex justify-around gap-8  px-[50px] py-[50px] mx-auto">
-            <div className="flex flex-col gap-6">
-                <div>
+    return <div className="relative bottom-0 left-0 right-0  text-white bg-black">
+        <div className="flex flex-wrap justify-around gap-8  px-[50px] py-[50px] mx-auto">
+            <div className="flex flex-col w-[230px] gap-6">
+                <div >
                     <div className="text-[24px] bold">DevStore</div>
                     <div>Subscribe</div>
                 </div>
@@ -23,7 +20,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col w-[230px] gap-6">
                 <div>
                         <div className="text-[24px] bold">DevStore</div>
                         <div>Sector-17, Chandigarh</div>
@@ -31,7 +28,7 @@ export const Footer = () => {
                     <div>devstore@gmail.com</div>
                     <div>+88015-88888-9999</div>
                 </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col w-[230px] gap-4">
                 <div className="text-[24px] bold">Acount</div>
                 <div>My Acount</div>
                 <div>Login / Register</div>
@@ -39,7 +36,7 @@ export const Footer = () => {
                 <div>Wishlist</div>
                 <div>shop</div>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col w-[230px] gap-4">
                 <div className="text-[24px] bold">Quick Links</div>
                 <div>Privacy Policy</div>
                 <div>Terms Of Use</div>
@@ -47,7 +44,7 @@ export const Footer = () => {
                 <div>Contact</div>
             </div>
             
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col w-[230px] gap-5">
                 <div>Download App</div>
                 <div className="flex flex-col gap-3">
                     <div className="text-[#FAFAFA]">Save $3 with App New User Only</div>

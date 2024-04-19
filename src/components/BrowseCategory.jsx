@@ -67,7 +67,7 @@ const categoryArray = [
 export const BrowseCategory = () => {
     const navigate = useNavigate()
     
-    return <div className="flex flex-col gap-5">
+    return <div className="flex flex-col gap-5 mx-2">
         <div>
             <div className="flex gap-5 items-center">
                 <div className="w-[20px] h-[40px] rounded bg-[#DB4444]"></div>
