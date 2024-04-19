@@ -26,7 +26,7 @@ export const Navbar = ()=>{
             }}>
                 DevStore
             </div>
-            <div className="hidden sm:flex items-center flex-end gap-7 ">
+            <div className="hidden md:flex items-center flex-end gap-7 ">
                 <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                     navigate('/')
                 }}>Home</button>
@@ -38,9 +38,9 @@ export const Navbar = ()=>{
                     navigate('/signup')
                 }}>Sign Up</button>
             </div>
-            <div className={`absolute flex items-center justify-center z-10 bg-slate-100 h-[100vh]  ${menu ? "translate-y-0" : "-translate-y-full"} top-0 bottom-0 left-0 right-0 `}>
+            <div className={`absolute flex items-center justify-center z-10 bg-slate-100 h-[100vh]  ${menu ? "translate-y-0" : "-translate-y-full"} top-0 bottom-0 left-0 right-0 transition-transform ease-in-out duration-300 delay-0`}>
                 <button className="absolute top-5 right-5" onClick={() => setMenu(false)}><RxCrossCircled size={30} /></button>
-                <div className="flex flex-col  gap-4 h-[50%]">
+                <div className="flex flex-col  gap-4 ">
                     <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                         navigate('/')
                         setMenu(false)
@@ -75,7 +75,7 @@ export const Navbar = ()=>{
             <div className="cursor-pointer bg-[#DB4444] text-white p-2 rounded-full">
                 <AiOutlineUser size={25} />
             </div>
-            <div className="sm:hidden " onClick={()=>{
+            <div className="md:hidden " onClick={()=>{
                 setMenu( prev => !prev);
             }}>
                 <AiOutlineMenu size={30} />
