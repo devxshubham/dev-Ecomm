@@ -7,8 +7,6 @@ import { BrowseCategory } from '../components/BrowseCategory'
 import { NewArrival } from '../components/NewArrival'
 import { useRef } from 'react'
 
-
-
 export const HomePage = () => {
 
     const contactRef = useRef()
