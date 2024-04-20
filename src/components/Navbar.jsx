@@ -11,12 +11,15 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCrossCircled } from "react-icons/rx";
 
-export const Navbar = ()=>{
+export const Navbar = ({contactRef})=>{
     const navigate = useNavigate();
 
     const kart = useRecoilValue(kartAtom)
     const [menu, setMenu] = useRecoilState(menuAtom)
-    console.log(menu);
+    
+    const scrollHandler = ()=>{
+        window.scrollTo({ top : contactRef.current.offsetTop, behavior: "smooth"})
+    }
     
 
     return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
@@ -30,7 +33,7 @@ export const Navbar = ()=>{
                 <button className="buttonUnderline text-[20px] font-medium" onClick={()=>{
                     navigate('/')
                 }}>Home</button>
-                <button className=" buttonUnderline text-[20px] font-medium">contact</button>
+                <button className=" buttonUnderline text-[20px] font-medium" onClick={scrollHandler}>contact</button>
                 <button className="buttonUnderline text-[20px] whitespace-nowrap font-medium" onClick={()=>{
                     navigate('/login')
                 }}>Sign In</button>
@@ -45,7 +48,10 @@ export const Navbar = ()=>{
                         navigate('/')
                         setMenu(false)
                     }}>Home</button>
-                    <button className=" buttonUnderline text-[20px] font-medium">contact</button>
+                    <button className=" buttonUnderline text-[20px] font-medium" onClick={()=>{
+                        setMenu(false)
+                        scrollHandler()
+                    }}>contact</button>
                     <button className="buttonUnderline text-[20px] whitespace-nowrap font-medium" onClick={()=>{
                         navigate('/login')
                         setMenu(false)

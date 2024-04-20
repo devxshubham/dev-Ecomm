@@ -7,8 +7,11 @@ import { kartAtom } from "../store/atoms/kartAtom"
 import { Footer } from "../components/Footer"
 
 import { useNavigate } from "react-router-dom"
+import { useRef } from 'react'
 
 export const ViewKart = () => {
+    const contactRef = useRef()
+
     const navigate = useNavigate();
 
     const setKartCount = useSetRecoilState(kartAtom)
@@ -18,7 +21,7 @@ export const ViewKart = () => {
 
 
     return <>
-        <Navbar></Navbar>
+        <Navbar contactRef={contactRef}></Navbar>
         <div className="flex flex-col gap-10 my-[50px] max-w-[800px] mx-auto">
             { kartId.length == 0 ? (
                 <div className="mx-auto my-auto h-[300px] font-semibold">
@@ -74,6 +77,6 @@ export const ViewKart = () => {
                 </>
             )}
         </div>
-        <Footer/>
+        <Footer contactRef={contactRef}/>
     </>
 }

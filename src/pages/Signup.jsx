@@ -4,14 +4,16 @@ import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
 
 import { useNavigate } from "react-router-dom"
+import { useRef } from 'react'
 
 export const Signup = () => {
+    const contactRef = useRef()
     
     const navigate = useNavigate()
     return <>
-        <Navbar></Navbar>
-        <div className="flex gap-[100px] my-12 mx-auto max-w-[1000px] justify-center items-center">
-            <div className="h-[600px]">
+        <Navbar contactRef={contactRef}></Navbar>
+        <div className="flex flex-col md:flex-row md:gap-[100px] my-12 mx-auto max-w-[1000px] justify-center items-center">
+            <div className="h-[600px] mx-2">
                 <Image src="https://ik.imagekit.io/vewzaaue0/DevStore/login.png?updatedAt=1711620613140"></Image>
             </div>
             <div className="flex flex-col gap-10">
@@ -33,6 +35,6 @@ export const Signup = () => {
             </div>
         </div>
 
-        <Footer/>
+        <Footer contactRef={contactRef}/>
     </>
 }

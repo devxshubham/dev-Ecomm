@@ -29,7 +29,7 @@ export const ProductDetail = ({prod}) => {
         })
     }
 
-    return <div className="flex flex-col gap-5 min-w-[400px]">
+    return <div className="flex flex-col gap-5 min-w-[350px]">
         <div className="flex flex-col gap-3 ">
             <div className="font-bold text-[24px]">{prod.brand} {prod.title}</div>
             <div>Rating : {prod.rating}</div>
