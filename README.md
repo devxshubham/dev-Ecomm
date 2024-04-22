@@ -1,8 +1,5 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# DevStore
 
-Currently, two official plugins are available:
+This e-commerce project is a front-end application built using React+vite, styled with Tailwind CSS for sleek, responsive layouts, and managed statefully with Recoil for efficient data flow and updates. It interfaces with dummyJSON, an API that provides placeholder data, enabling features like product listings and user accounts without the need for a backend setup.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
