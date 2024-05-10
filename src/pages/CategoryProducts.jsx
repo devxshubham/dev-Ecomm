@@ -30,7 +30,7 @@ export const CategoryProducts = () => {
             <div className="flex  my-4 text-[25px]">Showing Results for : <div className=" mx-2  font-bold">{category}</div></div>
             <div className="mt-[50px] flex flex-wrap gap-10 items-center justify-center">
                 {products.map( prod => {
-                    return <SingleProduct prod={prod}/>
+                    return <SingleProduct key={prod.id} prod={prod}/>
                 })}
             </div>
         </main>
