@@ -33,7 +33,7 @@ export const Login = () => {
                         }}>Login</button>
                         <div className="text-[#DB4444] cursor-pointer">Forgot Password?</div>
                     </div>
-                    <p>Don't have an account ? <a className="underline" href="/signup">Signup</a></p>
+                    <p>Don't have an account ? <a className="underline" href="signup">Signup</a></p>
                 </div>
             </div>
         </div>
