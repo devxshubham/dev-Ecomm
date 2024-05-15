@@ -6,6 +6,7 @@ import { SingleProduct } from './SingleProduct'
 export const RelatedProduct = ({category}) => {
 
     const [prods, setProds] = useState([])
+    
 
     useEffect( ()=> {
         axios.get(`https://dummyjson.com/products/category/${category}`)

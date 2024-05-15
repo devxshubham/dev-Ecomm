@@ -5,8 +5,9 @@ import { Image } from "./Image"
 export const SingleProduct = ({prod}) => {
 
     const navigate = useNavigate()
+    
 
-    return <div className="flex cursor-pointer relative my-5 hover:scale-110 hover:z-10 hover:rounded-lg transition-transform ease-in-out duration-200 delay-0 mb-[10px] flex-col w-[300px] max-h-[320px]" key={prod.id}
+    return <div className="flex cursor-pointer z-0 relative my-5 hover:scale-110 hover:rounded-lg transition-transform ease-in-out duration-200 delay-0 mb-[20px] flex-col w-[300px] max-h-[320px]" key={prod.id}
         onClick={()=>{
             navigate(`/product/${prod.id}`)
         }}>

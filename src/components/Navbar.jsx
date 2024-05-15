@@ -22,7 +22,7 @@ export const Navbar = ({contactRef})=>{
     }
     
 
-    return <div className="flex z-10 bg-white p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
+    return <div className="flex z-10 bg-white p-2 sm:p-5 sticky top-0 items-center justify-between flex-grow border-b-[2px] gap-1">
         <div className="flex justify-between max-w-[50%] gap-5 flex-grow">
             <div className="text-2xl font-bold text-transparent cursor-pointer bg-clip-text bg-gradient-to-r from-red-600 via-red-400 to-red-600" onClick={()=>{
                 navigate('/')

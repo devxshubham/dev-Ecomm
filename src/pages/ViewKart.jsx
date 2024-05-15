@@ -22,20 +22,20 @@ export const ViewKart = () => {
 
     return <>
         <Navbar contactRef={contactRef}></Navbar>
-        <div className="flex flex-col gap-10 my-[50px] max-w-[800px] mx-auto">
+        <div className="flex flex-col gap-10 my-[50px] min-w-[] max-w-[800px] mx-auto">
             { kartId.length == 0 ? (
                 <div className="mx-auto my-auto h-[300px] font-semibold">
                     Add Items to kart
                 </div>
             ) : (
             <>
-            <table className="table overflow-x-auto w-full ">
+            <table className="table overflow-x-auto overflow-auto min-w-[500px] w-full ">
                 <thead>
                     <tr className="shadow-md gap-2">
                         <th className="px-8 py-[15px] text-left">Product</th>
-                        <th className=" py-[15px] text-left">Price</th>
-                        <th className=" py-[15px] text-left">Quantity</th>
-                        <th className=" py-[15px] text-left">Subtotal</th>
+                        <th className="px-4 py-[15px] text-left">Price</th>
+                        <th className="px-4 py-[15px] text-left">Quantity</th>
+                        <th className="px-4 py-[15px] text-left">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
