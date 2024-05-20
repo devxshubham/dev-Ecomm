@@ -30,7 +30,7 @@ export const Signup = () => {
                     <button className="bg-[#DB4444] text-white w-full py-3 rounded" onClick={()=>{
                             navigate('/')
                         }}>Create Acount</button>
-                    <p>already have an account ? <a className="underline" href="login">login</a></p>
+                    <p>already have an account ? <a className="underline" href="/login">login</a></p>
                 </div>
             </div>
         </div>
