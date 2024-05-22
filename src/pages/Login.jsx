@@ -1,7 +1,7 @@
 import { Image } from "../components/Image"
 import { InputBox } from "../components/Inputbox"
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 export const Login = () => {
     const navigate = useNavigate()
@@ -27,7 +27,7 @@ export const Login = () => {
                         }}>Login</button>
                         <div className="text-[#DB4444] cursor-pointer">Forgot Password?</div>
                     </div>
-                    <p>Don't have an account ? <a className="underline" href="signup">Signup</a></p>
+                    <p>Don't have an account ? <Link className="underline" to="/signup">Signup</Link></p>
                 </div>
             </div>
         </div>

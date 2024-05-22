@@ -1,7 +1,7 @@
 import { Image } from "../components/Image"
 import { InputBox } from "../components/Inputbox"
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 export const Signup = () => {
     
@@ -25,7 +25,7 @@ export const Signup = () => {
                     <button className="bg-[#DB4444] text-white w-full py-3 rounded" onClick={()=>{
                             navigate('/')
                         }}>Create Acount</button>
-                    <p>already have an account ? <a className="underline" href="/login">login</a></p>
+                    <p>already have an account ? <Link className="underline" to="/login">login</Link>  </p>
                 </div>
             </div>
         </div>
