@@ -1,18 +1,12 @@
 import { Image } from "../components/Image"
 import { InputBox } from "../components/Inputbox"
-import { Navbar } from "../components/Navbar"
-import { Footer } from "../components/Footer"
 
 import { useNavigate } from "react-router-dom"
-import { useRef } from 'react'
 
 export const Login = () => {
     const navigate = useNavigate()
 
-    const contactRef = useRef()
-
     return <>
-        <Navbar contactRef={contactRef}></Navbar>
         <div className="flex flex-col md:flex-row md:gap-[100px] my-12 max-w-[1000px]  mx-auto justify-center items-center">
             <div className="h-[600px] mx-2">
                 <Image src="https://ik.imagekit.io/vewzaaue0/DevStore/login.png?updatedAt=1711620613140"></Image>
@@ -37,6 +31,5 @@ export const Login = () => {
                 </div>
             </div>
         </div>
-        <Footer contactRef={contactRef}></Footer>
     </>
 }

@@ -1,5 +1,3 @@
-import { Navbar } from "../components/Navbar";
-
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import axios from "axios"
@@ -7,7 +5,6 @@ import { useRef } from 'react'
 
 
 import { SingleProduct } from "../components/SingleProduct";
-import { Footer } from "../components/Footer"
 import { Shimmer } from "../components/Shimmer";
 
 export const CategoryProducts = () => {
@@ -28,8 +25,6 @@ export const CategoryProducts = () => {
     },[])
     
     return <div>
-        <Navbar contactRef={contactRef}></Navbar>
-        
         { ( products.length != 0 ) ? 
             <main className="max-w-[1000px] min-h-[500px] mx-auto my-12 ">
                 <div className="flex  my-4 text-[25px]">Showing Results for : <div className=" mx-2  font-bold">{category}</div></div>
@@ -42,7 +37,6 @@ export const CategoryProducts = () => {
             :
             <Shimmer/>
         }
-        <Footer contactRef={contactRef}></Footer>
     </div>
     
     

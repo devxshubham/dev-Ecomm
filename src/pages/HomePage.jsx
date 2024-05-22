@@ -1,16 +1,13 @@
 import '../App.css'
-import { Navbar } from '../components/Navbar'
-import { Footer } from '../components/Footer'
+
 import { Image } from '../components/Image'
 
 import { BrowseCategory } from '../components/BrowseCategory'
 import { NewArrival } from '../components/NewArrival'
-import { useRef } from 'react'
 
 export const HomePage = () => {
-    const contactRef = useRef()
+    
     return <>
-            <Navbar contactRef={contactRef}></Navbar>
             <main className='flex flex-col gap-[100px] my-[50px] max-w-[1200px] mx-auto '>
                 <div className='overflow-x-auto overflow-y-hidden'>
                     <div className="myRadient">
@@ -48,6 +45,6 @@ export const HomePage = () => {
             <NewArrival></NewArrival>
             
             </main>
-            <Footer contactRef={contactRef}></Footer>
+            
     </>
 }

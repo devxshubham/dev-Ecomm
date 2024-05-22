@@ -1,16 +1,12 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
-import { Navbar } from "../components/Navbar"
 import { kartIdAtom } from "../store/atoms/KartIdAtom"
 import { KartItem } from "../components/KartItem"
 import { totalPriceAtom } from "../store/atoms/totalPriceAtom"
 import { kartAtom } from "../store/atoms/kartAtom"
-import { Footer } from "../components/Footer"
 
 import { useNavigate } from "react-router-dom"
-import { useRef } from 'react'
 
 export const ViewKart = () => {
-    const contactRef = useRef()
 
     const navigate = useNavigate();
 
@@ -21,7 +17,6 @@ export const ViewKart = () => {
 
 
     return <>
-        <Navbar contactRef={contactRef}></Navbar>
         <div className="flex flex-col gap-10 my-[50px] min-w-[] max-w-[800px] mx-auto">
             { kartId.length == 0 ? (
                 <div className="mx-auto my-auto h-[300px] font-semibold">
@@ -77,6 +72,5 @@ export const ViewKart = () => {
                 </>
             )}
         </div>
-        <Footer contactRef={contactRef}/>
     </>
 }

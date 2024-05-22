@@ -1,55 +1,20 @@
 import { Navbar } from './components/Navbar'
-import { HomePage } from './pages/HomePage'
-import { ProductPage } from './pages/ProductPage'
-import { CategoryProducts } from './pages/CategoryProducts'
-import { Login } from './pages/Login'
-import { Signup } from './pages/Signup'
-import { ViewKart } from './pages/ViewKart'
+import { Footer } from './components/Footer'
 
 import { RecoilRoot } from 'recoil'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Success } from './pages/success'
-
-const router = createBrowserRouter([
-    {
-      path : '/product/:id',
-      element : <ProductPage/>
-    },
-    {
-      path : '/',
-      element : <HomePage/>
-    },
-    {
-      path : '/category/:name',
-      element : <CategoryProducts/>
-    },
-    {
-      path : '/login',
-      element : <Login/>
-    },
-    {
-      path : '/signup',
-      element : <Signup/>
-    },
-    {
-      path : '/product/kart',
-      element : <ViewKart/>
-    },
-    {
-      path : '/success',
-      element : <Success/>
-    }
-  ])
+import {  Outlet } from 'react-router-dom'
+import { useRef } from 'react'
 
 
 function App() {
+  const contactRef = useRef()
 
   return (
     <>
       <RecoilRoot>
-          <RouterProvider router = {router}>
-            
-          </RouterProvider>
+          <Navbar contactRef={contactRef}></Navbar>
+          <Outlet></Outlet>
+          <Footer contactRef={contactRef}></Footer>
       </RecoilRoot>
       
     </>
