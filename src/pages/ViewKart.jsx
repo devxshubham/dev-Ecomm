@@ -35,7 +35,7 @@ export const ViewKart = () => {
                 </thead>
                 <tbody>
                     {kartId.map( id => {
-                        return <KartItem id={id} />
+                        return <KartItem key={id} id={id} />
                     })}
                 </tbody>
             </table>
