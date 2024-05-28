@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 export const Success = () => {
     const navigate = useNavigate();
 
-    return <div className='flex fixed justify-center items-center text-white bg-gradient-to-b from-red-700  to-orange-500 h-screen w-screen'>
+    return <div className='flex z-20 fixed top-0 bottom-0 left-0 right-0 justify-center items-center text-white bg-gradient-to-b from-red-700  to-orange-500 h-screen w-screen'>
         <Confetti
         width={3000}
         height={1000}

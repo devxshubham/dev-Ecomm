@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import axios from "axios"
-import { useRef } from 'react'
-
 
 import { SingleProduct } from "../components/SingleProduct";
 import { Shimmer } from "../components/Shimmer";
 
 export const CategoryProducts = () => {
-    const contactRef = useRef()
 
     const [products, setProducts] = useState([]);
-
-    if( products.length != 0 ) console.log("products")
 
     const param = useParams();
     const category = param.name

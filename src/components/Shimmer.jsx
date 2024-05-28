@@ -5,7 +5,7 @@ export const Shimmer = ()=>{
     return (
         <div className="flex flex-wrap mt-[150px] my-10">
             {array.map ( x => {
-                return <div className="flex flex-col mx-auto my-auto">
+                return <div key={x} className="flex flex-col mx-auto my-auto">
                     <div className="p-2">
                         <ShimmerThumbnail height={300} width={300}></ShimmerThumbnail>
                     </div>
