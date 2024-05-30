@@ -1,11 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
-import { useRef } from "react";
 
 export const Footer = ({contactRef}) => {
 
 
-    return <div ref={contactRef} className="relative bottom-0 left-0 right-0  text-white bg-black">
+    return <div ref={contactRef} className="rlative bottom-0 left-0 right-0  text-white bg-black">
         <div className="flex flex-wrap justify-around gap-8  px-[50px] py-[50px] mx-auto">
             <div className="flex flex-col w-[230px] gap-6">
                 <div >

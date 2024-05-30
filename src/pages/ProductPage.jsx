@@ -2,24 +2,18 @@ import { ProductDetail } from "../components/ProductDetail"
 import { ProdImage } from "../components/prodImage"
 import { RelatedProduct } from "../components/RelatedProducts";
 
-import { useEffect, useState } from "react"
-import axios from 'axios'
 import { useParams } from "react-router-dom"
+import useGetProduct from "../utils/hooks/useGetProduct";
+import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 
 export const ProductPage = () => {
     const param = useParams();
+    const id = param.id
+    const prod = useGetProduct(id)
 
-    const [prod, setProd] = useState("")
+    const online = useOnlineStatus()
 
-    useEffect( ()=> {
-        axios.get(`https://dummyjson.com/products/${param.id}`)
-        .then( (res) => {
-            setProd(res.data)
-        })
-        .catch( err => {
-            console.log(err)
-        })
-    },[param.id])
+    if( !online ) return <div> you are offline </div>
 
     if(prod) return <>
         <section className="flex flex-col gap-10 mx-auto w-[90vw] max-w-[1050px] my-12">
