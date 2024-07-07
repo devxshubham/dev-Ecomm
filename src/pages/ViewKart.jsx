@@ -1,12 +1,14 @@
-import { useRecoilValue } from "recoil"
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { Navbar } from "../components/Navbar"
 import { kartIdAtom } from "../store/atoms/KartIdAtom"
 import { KartItem } from "../components/KartItem"
 import { totalPriceAtom } from "../store/atoms/totalPriceAtom"
+import { useEffect } from "react"
 
 export const ViewKart = () => {
     const kartId = useRecoilValue(kartIdAtom)
-    const totalPrice = useRecoilValue(totalPriceAtom)
+    const [totalPrice, setTotalPrice] = useRecoilState(totalPriceAtom)
+
 
     return <>
         <Navbar></Navbar>
@@ -22,8 +24,7 @@ export const ViewKart = () => {
                 </thead>
                 <tbody>
                     {kartId.map( id => {
-                        console.log(id)
-                        return <KartItem id={id}/>
+                        return <KartItem id={id} />
                     })}
                 </tbody>
             </table>
@@ -50,7 +51,7 @@ export const ViewKart = () => {
                             <div>{totalPrice}</div>
                         </div>
                     </div>
-                    <button className="px-4 text-white rounded py-2 bg-[#DB4444]">Proceed To Checkout</button>
+                    <button className="px-4 text-white rounded py-2 bg-[#DB4444]">Place Order</button>
                 </div>
            </div>
         </div>
